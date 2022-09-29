@@ -33,7 +33,7 @@ public class Brush: Codable {
     }
     
     private func adjustedWidth(for touch: UITouch) -> CGFloat {
-        guard #available(iOS 9.1, *), touch.type == .pencil else { return originalWidth }
+        guard touch.type == .pencil else { return originalWidth }
         return (originalWidth*(1-adjustedWidthFactor/10*2)) + (adjustedWidthFactor/touch.altitudeAngle)
     }
     
